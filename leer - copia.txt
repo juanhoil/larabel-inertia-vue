@@ -1,0 +1,124 @@
+Laravel Jetstream es un kit de inicio de aplicación
+ bellamente diseñado para Laravel y 
+proporciona el punto de partida perfecto para
+ su próxima aplicación de Laravel. Jetstream proporciona 
+la implementación para el inicio de sesión, registro, 
+verificación de correo electrónico, autenticación de dos factores,
+ administración de sesiones, API a través de Laravel Sanctum y funciones
+ opcionales de administración de equipo.
+
+Jetstream está diseñado con Tailwind CSS y ofrece su elección de andamios
+ Livewire o Inercia .
+
+	Livewire :
+Livewire es un framework de pila completa para Laravel que simplifica 
+la construcción de interfaces dinámicas, sin dejar la comodidad de Laravel.
+¿Cómo diablos funciona esto?
+Livewire muestra la salida del componente inicial con la página
+ (como una hoja incluida). De esta manera, es compatible con SEO.
+Cuando ocurre una interacción, Livewire realiza una solicitud AJAX
+ al servidor con los datos actualizados.
+El servidor vuelve a renderizar el componente y responde con el nuevo HTML.
+Livewire luego muta de forma inteligente DOM de acuerdo con
+ las cosas que cambiaron.
+
+	Inercia :
+
+
+ La creación de una aplicación de inercia es muy similar a la creación de 
+una aplicación típica de Vue; sin embargo, usará el enrutador de Laravel 
+en lugar del enrutador Vue. Inertia es una pequeña biblioteca que te permite 
+renderizar componentes Vue de un solo archivo desde tu backend de Laravel
+ proporcionando el nombre del componente y los datos que deben ser hidratados 
+en los "accesorios" de ese componente.
+
+En otras palabras, esta pila le brinda todo el poder de Vue.js sin
+ la complejidad del enrutamiento del lado del cliente.
+ La pila de inercia es una excelente opción si se siente cómodo
+ y disfruta usando Vue.js como su lenguaje de plantillas. Al usar Inercia,
+ las rutas de su aplicación responderán renderizando una "página" de Inercia.
+ Esto se parece mucho a devolver una vista de Laravel Blade:
+
+composer global require laravel/installer
+
+laravel -v 4.0.3
+
+en este casousaremos inecia para iplementar vue en laravel
+
+laravel new name-project --jet
+
+1
+
+yes
+
+
+
+npm install
+
+
+# Compile your CSS / JavaScript for development...
+npm run dev
+
+# Compile your CSS / JavaScript for production...
+npm run prod
+
+# Compile your CSS / JavaScript for development and recompile on change...
+npm run watch
+
+#compile las tablas en la base de datos
+
+	php artisan migrate
+
+	php artisan db:seed
+
+#end compile
+
+#no usar almenos que sea un caso especifico
+php artisan migrate:fresh --seed      ###eliminará todas las tablas y volverá a ejecutar todas sus migraciones
+
+
+
+
+Si desea permitir que los usuarios carguen fotos de perfil personalizadas,
+ debe habilitar la función en el config/jetstream.php
+    Features::profilePhotos(),
+
+php artisan storage:link
+
+ejecutar el storage:linkcomando Artisan. Este comando creará un enlace 
+simbólico en el publicdirectorio de su aplicación que permitirá 
+que su aplicación sirva las imágenes de su usuario
+
+
+
+despues de crear un componente hay que publicarlo de lo contrario este no se mostrara
+php artisan vendor:publish --tag=jetstream-views
+
+
+
+creando un controlador 
+php artisan make:controller UserController -r -m User
+
+
+
+/************notas ******************/
+	creando una tabla para migrar en laravel 
+php artisan make:migration create_alumnos_table
+
+	configura elcodigo y agrega los primeros valorespordefecto
+php artisan make:seeder UserSeeder
+
+
+	es como ponemos usar el axios en vue inertia
+
+axios.post(route('password.confirm'), {
+                    password: this.form.password,
+                }).then(() => {
+                    this.form.processing = false;
+                    this.closeModal()
+                    this.$nextTick(() => this.$emit('confirmed'));
+                }).catch(error => {
+                    this.form.processing = false;
+                    this.form.error = error.response.data.errors.password[0];
+                    this.$refs.password.focus()
+                });
