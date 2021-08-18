@@ -11,28 +11,50 @@
             </h2>
         </template>
 
+
+
+
+
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">                    
-                    
-                    <div class="accordion" id="accordionExample" v-for="item in report" :key="item">
-                    
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                {{item.name}}
-                            </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul class="list-group list-group-horizontal" v-for="studens in item.studens" :key="studens">
-                                    <li class="list-group-item"> {{studens.full_name}} </li>
-                                    <li class="list-group-item"> {{studens.created_at}} </li>
-                                </ul>
-                            </div>
-                            </div>
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">  
+                    <div class="row MB-3">
+                        <div class="col-4">
+                            <small> PROGRAM </small>
+                        </div>
+                        <div class="col-4">
+                            <small> TOTAL ENROLLED </small>
+                        </div>
+                            <div class="col-4 text-center">
+                            <small> DETAIL </small>
                         </div>
                     </div>
+                    <vue-collapsible-panel-group class="px-2" v-for="item in report" :key="item">
+                        <vue-collapsible-panel class="row">
+                            <template #title class="border border-info border-top-0 border-end-0 border-start-0 bg-light">
+                                <div class="col-4">
+                                        <strong> <h4> {{item.name}} </h4></strong>
+                                    </div>
+                                    <div class="col-4">
+                                        <strong> <h4> {{item.studens.length + 1}} </h4></strong>
+                                    </div>
+                            </template>
+                            <template #content>
+                                <div class="container row">
+                                        <div class="col-6">
+                                            Studen
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            enrollment date
+                                        </div>
+                                    </div>
+                                    <div class="alert alert-primary row" v-for="studens in item.studens" :key="studens" role="alert">
+                                        <div class="col-6"> {{studens.full_name}} </div>
+                                        <div class="col-6 text-end"> {{studens.created_at}} </div>
+                                    </div>
+                            </template>
+                        </vue-collapsible-panel>
+                    </vue-collapsible-panel-group>
                 </div>
             </div>
         </div>
@@ -42,6 +64,8 @@
 <script>
     import SideLayout from '@/Layouts/SideLayout.vue'
     import LogoLight from '@/Jetstream/LogoLight.vue'
+    import {VueCollapsiblePanelGroup,VueCollapsiblePanel} from '@dafcoe/vue-collapsible-panel'
+
     export default {
         props: {
            studentsInPrograms:{
@@ -53,6 +77,9 @@
         components: {
             SideLayout,
             LogoLight,
+            VueCollapsiblePanel,
+            VueCollapsiblePanelGroup
+
         },
         data() {
             return {
@@ -72,5 +99,9 @@
     line-height: 59px;
     text-align: center;
     color: #121835;
+}
+.accordion-button{
+    color: #121835 !important;
+    background: #e2e2e2;
 }
 </style>

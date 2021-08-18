@@ -41,7 +41,7 @@
                                         <th v-if="details.email != $page.props.user.email" scope="row"> {{details.email}} </th>
                                         <td v-if="details.email != $page.props.user.email" > {{details.name}} </td>
                                         <td v-if="details.email != $page.props.user.email" > {{details.email}} </td>
-                                        <td v-if="details.email != $page.props.user.email" > {{details.rol_id}} </td>
+                                        <td v-if="details.email != $page.props.user.email" > {{details.rol_id==1? 'Admin':'User'}} </td>
                                         <td v-if="details.email != $page.props.user.email" ><button @click="destroy(details.id)" class="btn btn-danger">delete</button></td>
                                     </tr>
                                 </tbody>
@@ -97,6 +97,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="mt-4">
+                                    <jet-label for="rol" value="Select rol user" />
                                     <select id="rol" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" v-model="form.rol" required autocomplete="new-rol">
                                         <option v-for="rol in rols" :key="rol" :value="rol.id">
                                             {{ rol.name_rol }}
@@ -105,8 +106,6 @@
                                 </div>
                             </div>
                         </div>
-
-                    
 
                         <div class="mt-4">
                             <div class="row">
