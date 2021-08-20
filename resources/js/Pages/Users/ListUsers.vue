@@ -7,68 +7,78 @@
 
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight text-header">
-                Users
+                Usuarios
             </h2>
         </template>
-        <div class="row">
-            <div class="col-md-2 text-center blocker">
-                <div class="circle bg-primary">
-                    <h3>1</h3>
-                </div>
-            </div>
-            <div class="col-md-10 flex items-center">
-                <h3 class="sub-tittle">User list</h3>
-            </div>
-        </div>
+       
 
         <div class="py-12">
+            
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="col-md-12">
-                            <div class="table-responsive">
-                                <div class="bd-example">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                    <th scope="col">User</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Rol</th>
-                                    </tr>
-                                </thead>
-                                <tbody v-if="users">
-                                    <tr v-for="details in users" :key="details">
-                                        <th v-if="details.email != $page.props.user.email" scope="row"> {{details.email}} </th>
-                                        <td v-if="details.email != $page.props.user.email" > {{details.name}} </td>
-                                        <td v-if="details.email != $page.props.user.email" > {{details.email}} </td>
-                                        <td v-if="details.email != $page.props.user.email" > {{details.rol_id==1? 'Admin':'User'}} </td>
-                                        <td v-if="details.email != $page.props.user.email" ><button @click="destroy(details.id)" class="btn btn-danger">delete</button></td>
-                                    </tr>
-                                </tbody>
+                <div class="">
+                     <div class="row flex items-center">
+                        <div class="col-md-2 text-center blocker">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="18" cy="18" r="18" fill="#28ABE7"/>
+                            </svg>
+                        </div>
+                        <div class="col-md-10">
+                            <h3 class="sub-tittle text-left">Lista de usuarios</h3>
+                        </div>
+                    </div>
 
-                                </table>
-                                </div>
+
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <div class="bd-example">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Rol</th>
+                                </tr>
+                            </thead>
+                            <tbody v-if="users">
+                                <tr class="alert alert-primary trmb" v-for="details in users" :key="details">
+                                    <td v-if="details.email != $page.props.user.email" scope="row"> {{details.email}} </td>
+                                    <td v-if="details.email != $page.props.user.email" > {{details.name}} </td>
+                                    <td v-if="details.email != $page.props.user.email" > {{details.email}} </td>
+                                    <td v-if="details.email != $page.props.user.email" > {{details.rol_id==1? 'Admin':'User'}} </td>
+                                    <td v-if="details.email != $page.props.user.email" >
+                                        <button @click="destroy(details.id)" class="btn btn-transparent">
+                                            <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 16C1 17.1 1.9 18 3 18H11C12.1 18 13 17.1 13 16V4H1V16ZM14 1H10.5L9.5 0H4.5L3.5 1H0V3H14V1Z" fill="black"/>
+                                            </svg>    
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                            </table>
                             </div>
-                            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
          
-         <div class="row">
-            <div class="col-md-2 text-center blocker">
-                <div class="circle bg-primary">
-                    <h3>2</h3>
-                </div>
-            </div>
-            <div class="col-md-10 flex items-center">
-                <h3 class="sub-tittle">New user</h3>
-            </div>
-        </div>
         
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">                    
+                <div class="">
+                    <div class="row flex items-center">
+                        <div class="col-md-2 text-center blocker">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="18" cy="18" r="18" fill="#28ABE7"/>
+                            </svg>
+                        </div>
+                        <div class="col-md-10 ">
+                            <h3 class="sub-tittle text-left">Nuevo Usuario</h3>
+                        </div>
+                    </div>
+
                     <form class="form-control col-sm-11 col-md-10" @submit.prevent="submit">
                         <div class="row">
                             <div class="col-sm-6">
@@ -213,20 +223,29 @@
     }
 </script>
 <style scoped>
+.trmb{
+    border-bottom: 13px solid #f9feff !important;
+    background: #E8F9FE;
+    color: #000;
+}
+td {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:20px;   
+  font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+}
 .sub-tittle{
-    width: 212px;
-height: 29px;
-left: 476px;
-top: 202px;
-
-font-family: Montserrat;
 font-style: normal;
 font-weight: bold;
 font-size: 34px;
 line-height: 29px;
-text-align: center;
 
 color: #121835;
+}
+.btn-transparent{
+   background: #fff0;
 }
 .bloker{
     text-align: center;

@@ -1,3 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.bg-transparent header{
+    border-bottom: 1px solid #92C8D8;
+}
