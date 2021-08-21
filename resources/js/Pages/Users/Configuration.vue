@@ -15,8 +15,8 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="">
                     <div class="row">
-                        <div class="col-sm-4"></div>
-                        <form class="col-sm-6" @submit.prevent="submit">
+                        <div class="col-sm-2"></div>
+                        <form class="col-sm-7" @submit.prevent="submit">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="mt-3r controls">

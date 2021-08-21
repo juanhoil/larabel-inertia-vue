@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container-fluid px-0">
         <Head :title="title" />
 
         <div class="side-navbar d-flex flex-column " :class="show ? 'active-nav' : 'n' " id="sidebar">
@@ -217,7 +217,7 @@ a {
 .my-container {
   transition: 0.4s;
   background: #F9FEFF !important;
-  height: 1000px;
+  min-height: 1000px;
 }
 
 .active-nav {
