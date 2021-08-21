@@ -33026,7 +33026,7 @@ var _hoisted_4 = {
 };
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "row flex items-center"
+  "class": "row flex items-center bb"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-md-1 text-center blocker"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
@@ -33119,7 +33119,7 @@ var _hoisted_22 = {
 };
 
 var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "row flex items-center"
+  "class": "row flex items-center bb"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-md-1 text-center blocker"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
@@ -34101,7 +34101,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.btn-roderprimary[data-v-aaf58eec]{\r\n    background: #23B8E3;\r\n    border-radius: 10px;\r\n    color:#fff;\r\n    width: 234px;\r\n    height: 62px;\r\n    float: right;\r\n    font-size: 24px;\n}\n.mt-3r[data-v-aaf58eec]{\r\n    margin-top: 3.5rem;\n}\n.trmb[data-v-aaf58eec]{\r\n    border-bottom: 13px solid #f9feff !important;\r\n    background: #E8F9FE;\r\n    color: #000;\n}\ntd[data-v-aaf58eec] {\r\n  padding-top:20px;\r\n  padding-bottom:20px;\r\n  padding-right:20px;   \r\n  font-weight: 500;\r\n  font-size: 18px;\r\n  line-height: 22px;\n}\n.sub-tittle[data-v-aaf58eec]{\r\n    font-style: normal;\r\n    font-weight: bold;\r\n    font-size: 34px;\r\n    line-height: 29px;\r\n\r\n    color: #121835;\n}\n.btn-transparent[data-v-aaf58eec]{\r\n   background: #fff0;\n}\n.bloker[data-v-aaf58eec]{\r\n    text-align: center;\r\n    vertical-align: middle;\n}\n.text-header[data-v-aaf58eec]{\r\n    font-weight: bold;\r\n    font-size: 48px;\r\n    line-height: 59px;\r\n    text-align: center;\r\n    color: #121835;\n}\n.circle[data-v-aaf58eec] {\r\n    border-radius: 200px;\r\n    color: white;\r\n    height: 59px;\r\n    font-weight: bold;\r\n    width: 59px;\r\n    display: table;\r\n    margin: 20px auto;\n}\n.circle h3[data-v-aaf58eec] {\r\n    vertical-align: middle;\r\n    display: table-cell;\n}\n.control-label[data-v-aaf58eec]{\r\n    position: absolute;\r\n    margin-top: -70px;\n}\ninput:focus + .control-label[data-v-aaf58eec]{\r\n    color: #23B8E3 !important;\r\n    font-weight: 700 !important;\n}\nselect:focus + .control-label[data-v-aaf58eec]{\r\n    color: #23B8E3 !important;\r\n    font-weight: 700 !important;\n}\ninput[data-v-aaf58eec],select[data-v-aaf58eec]{\r\n    background: #fff0;\r\n    height: 50px;\n}\ninput[data-v-aaf58eec]:focus{\r\nborder: 2px solid #23B8E3;\r\nbox-sizing: border-box;\r\nborder-radius: 10px;\n}\nselect[data-v-aaf58eec]:focus{\r\nborder: 2px solid #23B8E3;\r\nbox-sizing: border-box;\r\nborder-radius: 10px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bb[data-v-aaf58eec]{\r\n     border-bottom: 1px solid #92C8D8;\r\n     padding-bottom: 15px;\n}\n.btn-roderprimary[data-v-aaf58eec]{\r\n    background: #23B8E3;\r\n    border-radius: 10px;\r\n    color:#fff;\r\n    width: 234px;\r\n    height: 62px;\r\n    float: right;\r\n    font-size: 24px;\n}\n.mt-3r[data-v-aaf58eec]{\r\n    margin-top: 3.5rem;\n}\n.trmb[data-v-aaf58eec]{\r\n    border-bottom: 13px solid #f9feff !important;\r\n    background: #E8F9FE;\r\n    color: #000;\n}\ntd[data-v-aaf58eec] {\r\n  padding-top:20px;\r\n  padding-bottom:20px;\r\n  padding-right:20px;   \r\n  font-weight: 500;\r\n  font-size: 18px;\r\n  line-height: 22px;\n}\n.sub-tittle[data-v-aaf58eec]{\r\n    font-style: normal;\r\n    font-weight: bold;\r\n    font-size: 34px;\r\n    line-height: 29px;\r\n\r\n    color: #121835;\n}\n.btn-transparent[data-v-aaf58eec]{\r\n   background: #fff0;\n}\n.bloker[data-v-aaf58eec]{\r\n    text-align: center;\r\n    vertical-align: middle;\n}\n.text-header[data-v-aaf58eec]{\r\n    font-weight: bold;\r\n    font-size: 48px;\r\n    line-height: 59px;\r\n    text-align: center;\r\n    color: #121835;\n}\n.circle[data-v-aaf58eec] {\r\n    border-radius: 200px;\r\n    color: white;\r\n    height: 59px;\r\n    font-weight: bold;\r\n    width: 59px;\r\n    display: table;\r\n    margin: 20px auto;\n}\n.circle h3[data-v-aaf58eec] {\r\n    vertical-align: middle;\r\n    display: table-cell;\n}\n.control-label[data-v-aaf58eec]{\r\n    position: absolute;\r\n    margin-top: -70px;\n}\ninput:focus + .control-label[data-v-aaf58eec]{\r\n    color: #23B8E3 !important;\r\n    font-weight: 700 !important;\n}\nselect:focus + .control-label[data-v-aaf58eec]{\r\n    color: #23B8E3 !important;\r\n    font-weight: 700 !important;\n}\ninput[data-v-aaf58eec],select[data-v-aaf58eec]{\r\n    background: #fff0;\r\n    height: 50px;\n}\ninput[data-v-aaf58eec]:focus{\r\nborder: 2px solid #23B8E3;\r\nbox-sizing: border-box;\r\nborder-radius: 10px;\n}\nselect[data-v-aaf58eec]:focus{\r\nborder: 2px solid #23B8E3;\r\nbox-sizing: border-box;\r\nborder-radius: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -16,7 +16,7 @@
             
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="">
-                     <div class="row flex items-center">
+                    <div class="row flex items-center bb">
                         <div class="col-md-1 text-center blocker">
                             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="18" cy="18" r="18" fill="#28ABE7"/>
@@ -67,7 +67,7 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="">
-                    <div class="row flex items-center">
+                    <div class="row flex items-center bb">
                         <div class="col-md-1 text-center blocker">
                             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="18" cy="18" r="18" fill="#28ABE7"/>
@@ -226,6 +226,10 @@
     }
 </script>
 <style scoped>
+.bb{
+     border-bottom: 1px solid #92C8D8;
+     padding-bottom: 15px;
+}
 .btn-roderprimary{
     background: #23B8E3;
     border-radius: 10px;
