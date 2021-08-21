@@ -17,7 +17,7 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="">
                      <div class="row flex items-center">
-                        <div class="col-md-2 text-center blocker">
+                        <div class="col-md-1 text-center blocker">
                             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="18" cy="18" r="18" fill="#28ABE7"/>
                             </svg>
@@ -27,8 +27,7 @@
                         </div>
                     </div>
 
-
-                    <div class="col-md-12">
+                    <div class="col-md-12 mt-4">
                         <div class="table-responsive">
                             <div class="bd-example">
                             <table class="table">
@@ -42,7 +41,7 @@
                             </thead>
                             <tbody v-if="users">
                                 <tr class="alert alert-primary trmb" v-for="details in users" :key="details">
-                                    <td v-if="details.email != $page.props.user.email" scope="row"> {{details.email}} </td>
+                                    <td v-if="details.email != $page.props.user.email" scope="row"> {{details.name}} </td>
                                     <td v-if="details.email != $page.props.user.email" > {{details.name}} </td>
                                     <td v-if="details.email != $page.props.user.email" > {{details.email}} </td>
                                     <td v-if="details.email != $page.props.user.email" > {{details.rol_id==1? 'Admin':'User'}} </td>
@@ -69,7 +68,7 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="">
                     <div class="row flex items-center">
-                        <div class="col-md-2 text-center blocker">
+                        <div class="col-md-1 text-center blocker">
                             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="18" cy="18" r="18" fill="#28ABE7"/>
                             </svg>
@@ -78,66 +77,70 @@
                             <h3 class="sub-tittle text-left">Nuevo Usuario</h3>
                         </div>
                     </div>
-
-                    <form class="form-control col-sm-11 col-md-10" @submit.prevent="submit">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="mt-4">
-                                    <jet-label for="name" value="Name" />
-                                    <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="mt-4">
-                                    <jet-label for="email" value="Email" />
-                                    <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required />
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="mt-4">
-                                    <jet-label for="password" value="Password" />
-                                    <jet-input id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="new-password" />
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="mt-4">
-                                    <jet-label for="password_confirmation" value="Confirm Password" />
-                                    <jet-input id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" required autocomplete="new-password" />
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="mt-4">
-                                    <jet-label for="rol" value="Select rol user" />
-                                    <select id="rol" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" v-model="form.rol" required autocomplete="new-rol">
-                                        <option v-for="rol in rols" :key="rol" :value="rol.id">
-                                            {{ rol.name_rol }}
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-4">
+      
+                    <div class="row">
+                        <form class="col-sm-12" @submit.prevent="submit">
                             <div class="row">
-                                <div class="col-sm">
-                                    <div class="mt-4" v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature">
-                                        <jet-label for="terms">
-                                            <div class="flex items-center">
-                                                
-                                            </div>
-                                        </jet-label>
+                                <div class="col-sm-6">
+                                    <div class="mt-3r controls">
+                                        <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
+                                        <jet-label for="name" value="Nombre" class="control-label"/>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="d-grid gap-2">
-                                    <jet-button class="btn btn-warning" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                                            Register
-                                        </jet-button>
+                                <div class="col-sm-6">
+                                    <div class="mt-3r controls">
+                                        <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required />
+                                        <jet-label for="email" value="Correo" class="control-label"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mt-3r controls">
+                                        <jet-input id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="new-password" />
+                                        <jet-label for="password" value="Contraseña" class="control-label"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mt-3r controls">
+                                        <jet-input id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" required autocomplete="new-password" />
+                                        <jet-label for="password_confirmation" value="Confirmar contraseña" class="control-label"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mt-3r controls">
+                                        <select id="rol" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" v-model="form.rol" required autocomplete="new-rol">
+                                            <option v-for="rol in rols" :key="rol" :value="rol.id">
+                                                {{ rol.name_rol }}
+                                            </option>
+                                        </select>
+                                        <jet-label for="rol" value="Rol en plataforma" class="control-label"/>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+
+
+                            <div class="mt-4">
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <div class="mt-4" v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature">
+                                            <jet-label for="terms">
+                                                <div class="flex items-center">
+                                                    
+                                                </div>
+                                            </jet-label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="">
+                                            <jet-button class="btn btn-roderprimary" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                                                Crear
+                                            </jet-button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -223,6 +226,18 @@
     }
 </script>
 <style scoped>
+.btn-roderprimary{
+    background: #23B8E3;
+    border-radius: 10px;
+    color:#fff;
+    width: 234px;
+    height: 62px;
+    float: right;
+    font-size: 24px;
+}
+.mt-3r{
+    margin-top: 3.5rem;
+}
 .trmb{
     border-bottom: 13px solid #f9feff !important;
     background: #E8F9FE;
@@ -233,16 +248,16 @@ td {
   padding-bottom:20px;
   padding-right:20px;   
   font-weight: 500;
-font-size: 18px;
-line-height: 22px;
+  font-size: 18px;
+  line-height: 22px;
 }
 .sub-tittle{
-font-style: normal;
-font-weight: bold;
-font-size: 34px;
-line-height: 29px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 29px;
 
-color: #121835;
+    color: #121835;
 }
 .btn-transparent{
    background: #fff0;
@@ -270,5 +285,34 @@ color: #121835;
 .circle h3 {
     vertical-align: middle;
     display: table-cell;
+}
+.control-label{
+    position: absolute;
+    margin-top: -70px;
+}
+input:focus + .control-label{
+    color: #23B8E3 !important;
+    font-weight: 700 !important;
+}
+
+select:focus + .control-label{
+    color: #23B8E3 !important;
+    font-weight: 700 !important;
+}
+input,select{
+    background: #fff0;
+    height: 50px;
+}
+input:focus{
+border: 2px solid #23B8E3;
+box-sizing: border-box;
+border-radius: 10px;
+
+}
+select:focus{
+border: 2px solid #23B8E3;
+box-sizing: border-box;
+border-radius: 10px;
+
 }
 </style>

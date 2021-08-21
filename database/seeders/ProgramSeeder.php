@@ -14,9 +14,9 @@ class ProgramSeeder extends Seeder
     public function run()
     {
         DB::table('programs')->insert([
-            ['name' => 'Program 1'],
-            ['name' => 'Program 2'],
-            ['name' => 'Program 3'],
+            ['name' => 'Programa 1'],
+            ['name' => 'Programa 2'],
+            ['name' => 'Programa 3'],
         ]);
     }
 }

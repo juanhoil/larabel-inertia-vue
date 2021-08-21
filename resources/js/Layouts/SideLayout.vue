@@ -54,7 +54,7 @@
                     </div>
                 </jet-nav-link>
             </div>
-            <div class="p-">
+            <div class="mt-3">
                 <form @submit.prevent="logout">
                     <jet-dropdown-link as="button">
                         Log Out
@@ -68,7 +68,7 @@
             <!-- Top Nav -->
             <nav class="row mx-1" >
                 <div class="col-1">
-                    <a class="btn border-0" id="menu-btn" @click="isOpend(show)">
+                    <a class="btn" id="menu-btn" @click="isOpend(show)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                         </svg>
@@ -155,6 +155,12 @@
   background-color: #263238;
   transition: 0.5s;
 }
+.side-navbar .border-indigo-400{
+margin-left: -300px;
+}
+.active-nav .border-indigo-400{
+    margin-left: 0px;
+}
 .px-8{
     padding: 4.5rem !important;
     padding-bottom: 2.5rem !important;
@@ -225,9 +231,16 @@ a {
 }
 
 #menu-btn {
-  background-color: #100901;
-  color: #fff;
-  
+  background-color: #fff0;
+  color: #000;
+  border-color: #E8F9FE;
+  display: none;
+}
+@media (max-width: 765px) {
+
+	#menu-btn{
+        display: block;
+    }
 }
 </style>
 
